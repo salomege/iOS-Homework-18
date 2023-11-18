@@ -10,7 +10,7 @@ import UIKit
 final class MovieItemCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
-    let movieImageView: UIImageView = {
+   private let movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -81,4 +81,20 @@ final class MovieItemCollectionViewCell: UICollectionViewCell {
         
     }
     
+    
+    func setImage(from url: String) {
+        NetworkManager.shared.downloadImage(from: url) { [weak self] image in
+            DispatchQueue.main.async {
+                self?.movieImageView.image = image
+            }
+        }
+    }
+    
+    func configure(with movie: Movie) {
+        titleLabel.text = movie.title
+        setImage(from: movie.posterPath)
+    }
 }
+
+
+

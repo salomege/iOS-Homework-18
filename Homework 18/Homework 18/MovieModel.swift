@@ -7,42 +7,25 @@
 
 import Foundation
 
+// MARK: - Welcome
+struct MoviesResponse: Decodable {
+    let results: [Movie]
+}
 
-let URLString = "https://www.omdbapi.com/"
-
-struct Movie: Codable {
+struct Movie: Decodable {
+   
+   
+    let id: Int
     let title: String
-    let genre: String
-    let poster: String
+    let posterPath: String
+    
 
     enum CodingKeys: String, CodingKey {
-        case title = "Title"
-        case genre = "Genre"
-        case poster = "Poster"
+   
+        case id
+        case title
+        case posterPath = "poster_path"
+        
     }
 }
-
-func fetchMovieFromURL(url: URL, completion: @escaping (Result<Movie, Error>) -> Void) {
-    URLSession.shared.dataTask(with: url) { data, response, error in
-        if let error = error {
-            completion(.failure(error))
-            return
-        }
-
-        guard let data = data else {
-            let noDataError = NSError(domain: "https://www.omdbapi.com/", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
-            completion(.failure(noDataError))
-            return
-        }
-
-        do {
-            let decoder = JSONDecoder()
-            let movie = try decoder.decode(Movie.self, from: data)
-            completion(.success(movie))
-        } catch {
-            completion(.failure(error))
-        }
-    }.resume()
-}
-
 

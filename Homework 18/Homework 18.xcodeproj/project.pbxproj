@@ -15,6 +15,7 @@
 		F1D0E9E22AFF9282004F3C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D0E9E02AFF9282004F3C37 /* LaunchScreen.storyboard */; };
 		F1D0E9EA2AFF92EA004F3C37 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0E9E92AFF92EA004F3C37 /* MovieModel.swift */; };
 		F1D0E9EC2AFF93B8004F3C37 /* MovieItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0E9EB2AFF93B8004F3C37 /* MovieItemCollectionViewCell.swift */; };
+		F1D0EA172B08A73C004F3C37 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D0EA162B08A73C004F3C37 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F1D0E9E32AFF9282004F3C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1D0E9E92AFF92EA004F3C37 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		F1D0E9EB2AFF93B8004F3C37 /* MovieItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		F1D0EA162B08A73C004F3C37 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = ../../NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 		F1D0E9D42AFF9281004F3C37 /* Homework 18 */ = {
 			isa = PBXGroup;
 			children = (
-				F1D0E9D52AFF9281004F3C37 /* AppDelegate.swift */,
 				F1D0E9D72AFF9281004F3C37 /* SceneDelegate.swift */,
+				F1D0E9D52AFF9281004F3C37 /* AppDelegate.swift */,
+				F1D0EA112B08A146004F3C37 /* NerworkManager */,
 				F1D0E9E92AFF92EA004F3C37 /* MovieModel.swift */,
 				F1D0E9EB2AFF93B8004F3C37 /* MovieItemCollectionViewCell.swift */,
 				F1D0E9D92AFF9281004F3C37 /* ViewController.swift */,
@@ -71,6 +74,14 @@
 				F1D0E9E32AFF9282004F3C37 /* Info.plist */,
 			);
 			path = "Homework 18";
+			sourceTree = "<group>";
+		};
+		F1D0EA112B08A146004F3C37 /* NerworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				F1D0EA162B08A73C004F3C37 /* NetworkManager.swift */,
+			);
+			path = NerworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D0EA172B08A73C004F3C37 /* NetworkManager.swift in Sources */,
 				F1D0E9EA2AFF92EA004F3C37 /* MovieModel.swift in Sources */,
 				F1D0E9EC2AFF93B8004F3C37 /* MovieItemCollectionViewCell.swift in Sources */,
 				F1D0E9DA2AFF9281004F3C37 /* ViewController.swift in Sources */,
